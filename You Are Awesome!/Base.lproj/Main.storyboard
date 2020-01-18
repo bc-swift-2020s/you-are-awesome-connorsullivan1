@@ -22,20 +22,16 @@
                                 <color key="textColor" red="0.53959375620000005" green="0.061818420890000003" blue="0.04153894633" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GMX-pF-S1W">
+                                <rect key="frame" x="16" y="166" width="288" height="382"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cn7-3R-wTS">
-                                <rect key="frame" x="16" y="128" width="104" height="30"/>
+                                <rect key="frame" x="108" y="128" width="104" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Show Message"/>
                                 <connections>
                                     <action selector="messageButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qsl-mR-g09"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="79A-js-kXn">
-                                <rect key="frame" x="143" y="128" width="161" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Show another Message"/>
-                                <connections>
-                                    <action selector="messageButton2Pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LwD-ai-JVC"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -43,6 +39,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="imageView" destination="GMX-pF-S1W" id="lcp-gW-ctu"/>
                         <outlet property="messageLabel" destination="VuQ-Vn-63x" id="aKx-mj-dOn"/>
                     </connections>
                 </viewController>
