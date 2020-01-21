@@ -14,7 +14,6 @@ class ViewController: UIViewController {
     
     var messages = ["You Are Awesome!","You Are Great!","You Are Da Bomb!","You Are Fabulous!","You Are Swifty!","You Are a Legend!"]
     var imageNumber = 0
-    var messageNumber = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,10 +29,8 @@ class ViewController: UIViewController {
             imageNumber = 0
         }
         
-        messageLabel.text = messages[messageNumber]
-        messageNumber += 1
-        if messageNumber == messages.count {
-            messageNumber = 0
+        let randomMessage = Int.random(in: 0...(messages.count-1))
+        messageLabel.text = messages[randomMessage]
         }
         
 
@@ -53,6 +50,4 @@ class ViewController: UIViewController {
     //        }
         
     }
-    
-}
 
