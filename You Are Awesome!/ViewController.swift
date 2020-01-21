@@ -32,7 +32,7 @@ class ViewController: UIViewController {
         
         messageLabel.text = messages[messageNumber]
         messageNumber += 1
-        if messageNumber == 5 {
+        if messageNumber == messages.count {
             messageNumber = 0
         }
         
