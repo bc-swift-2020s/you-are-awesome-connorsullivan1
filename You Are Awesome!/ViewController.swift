@@ -33,7 +33,6 @@ class ViewController: UIViewController {
         messageLabel.text = messages[randomMessage]
         }
         
-
     //        let awesomeMessage = "You Are Awesome!"
     //        let greatMessage = "You Are Great!"
     //        let bombMessage = "You Are Da Bomb!"
