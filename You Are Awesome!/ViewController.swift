@@ -12,7 +12,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     
-    var messages = ["You Are Awesome!","You Are Great!","You Are Da Bomb!","You Are Fabulous!","You Are Swifty!","You Are a Legend!"]
+    var messages = ["You Are Awesome!","You Are Great!",
+                    "You Are Da Bomb!","You Are Fabulous!",
+                    "You Are Swifty!",
+                    "When the Genius Bar Needs Help, They Call You!",
+                    "You Are a Legend!"]
     var imageNumber = 0
     
     override func viewDidLoad() {
@@ -22,12 +26,8 @@ class ViewController: UIViewController {
     
     @IBAction func messageButtonPressed(_ sender: UIButton) {
         
-        //let imageName = "image" + String(imageNumber)
-        imageView.image = UIImage(named: "image\(imageNumber)")
-        imageNumber = imageNumber + 1
-        if imageNumber == 10 {
-            imageNumber = 0
-        }
+        let randomImage = Int.random(in: 0...9)
+        imageView.image = UIImage(named: "image\(randomImage)")
         
         let randomMessage = Int.random(in: 0...(messages.count-1))
         messageLabel.text = messages[randomMessage]
