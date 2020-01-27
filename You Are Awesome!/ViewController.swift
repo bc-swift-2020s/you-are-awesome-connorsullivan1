@@ -15,11 +15,27 @@ class ViewController: UIViewController {
     
     var imageNumber = -1
     var messageNumber = -1
+    var soundNumber = -1
     let totalNumberOfImages = 9
+    var totalNumberOfSounds = 2
     var audioPlayer = AVAudioPlayer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+    }
+    
+    func playSound(name: String) {
+        if let sound = NSDataAsset(name: name){
+            do {
+                try audioPlayer = AVAudioPlayer(data: sound.data)
+                audioPlayer.play()
+            } catch {
+                print("Error: \(error.localizedDescription) Couldn't initialize AVAudioPlayer")
+            }
+        } else {
+            print("Error: Could Not Play Sound")
+        }
         
     }
     
@@ -45,16 +61,13 @@ class ViewController: UIViewController {
         imageNumber = newImageNumber
         imageView.image = UIImage(named: "image\(imageNumber)")
         
-        if let sound = NSDataAsset(name: "sound0"){
-            do {
-                try audioPlayer = AVAudioPlayer(data: sound.data)
-                audioPlayer.play()
-            } catch {
-                print("Error: \(error.localizedDescription) Couldn't initialize AVAudioPlayer")
-            }
-        } else {
-            print("Error: Could Not Play Sound")
-        }
+        var newSoundNumber: Int
+        repeat {
+            newSoundNumber = Int.random(in: 0...totalNumberOfSounds)
+        } while soundNumber == newSoundNumber
+        soundNumber = newSoundNumber
+        
+        playSound(name:"sound\(soundNumber)")
     }
     
     
