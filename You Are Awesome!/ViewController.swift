@@ -25,6 +25,15 @@ class ViewController: UIViewController {
         
     }
     
+    func nonRepeatingRandom(originalNumber: Int, upperLimit: Int) -> Int {
+        var newNumber: Int
+        repeat {
+            newNumber = Int.random(in: 0...upperLimit)
+        } while originalNumber == newNumber
+        return newNumber
+        
+    }
+    
     func playSound(name: String) {
         if let sound = NSDataAsset(name: name){
             do {
@@ -46,31 +55,18 @@ class ViewController: UIViewController {
                         "When the Genius Bar Needs Help, They Call You!",
                         "You Are a Legend!"]
         
-        var newMessageNumber: Int
-        repeat {
-            newMessageNumber = Int.random(in: 0...(messages.count-1))
-        } while messageNumber == newMessageNumber
-        messageNumber = newMessageNumber
+        messageNumber = nonRepeatingRandom(originalNumber: messageNumber, upperLimit: messages.count-1)
         messageLabel.text = messages[messageNumber]
         
         
-        var newImageNumber: Int
-        repeat {
-            newImageNumber = Int.random(in: 0...totalNumberOfImages)
-        } while imageNumber == newImageNumber
-        imageNumber = newImageNumber
+        imageNumber = nonRepeatingRandom(originalNumber: imageNumber, upperLimit: totalNumberOfImages)
         imageView.image = UIImage(named: "image\(imageNumber)")
         
-        var newSoundNumber: Int
-        repeat {
-            newSoundNumber = Int.random(in: 0...totalNumberOfSounds)
-        } while soundNumber == newSoundNumber
-        soundNumber = newSoundNumber
-        
+        soundNumber = nonRepeatingRandom(originalNumber: soundNumber, upperLimit: totalNumberOfSounds)
         playSound(name:"sound\(soundNumber)")
     }
     
     
 }
-
+ 
 
