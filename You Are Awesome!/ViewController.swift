@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     var soundNumber = -1
     let totalNumberOfImages = 9
     var totalNumberOfSounds = 2
-    var audioPlayer = AVAudioPlayer()
+    var audioPlayer: AVAudioPlayer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
