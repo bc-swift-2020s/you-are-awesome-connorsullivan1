@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     
+    
     var imageNumber = -1
     var messageNumber = -1
     var soundNumber = -1
